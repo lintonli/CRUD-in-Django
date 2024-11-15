@@ -1,0 +1,12 @@
+<h1> All Vehicles</h1>
+<a href="{% url 'create_item' %}"> Add Vehicle</a>
+<ul>
+    {% for item in vehicles %}
+    <li>
+        <h2>{{ item.name }}</h2>
+    <p>{{ item.description }}</p>
+    </li>
+        <a href="{% url 'update_item' item.id %}">UPDATE</a>
+         <a href="{% url 'delete_item' item.id %}">DELETE</a>
+    {% endfor %}
+</ul>

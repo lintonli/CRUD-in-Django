@@ -1,0 +1,13 @@
+<h1>{% if vehicle %}Update{% else %}Create{% endif %}</h1>
+<form method="post" action="{{ action_url }}">
+{#    #forms should have a method#}
+{#    #ensure you have this while dealing with forms in django#}
+    {% csrf_token %}
+    <label for="name" > Vehicle Name</label>
+    <input type="text" id="name" placeholder="Enter vehicle name" name="name" value="{{ name }}">
+    <br>
+    <label for="description" > Vehicle Description</label>
+    <textarea type="text" id="description" placeholder="Enter vehicle description" name="description" >{{ description }}</textarea>
+    <button type="submit">Submit</button>
+</form>
+<a  href="{% url 'item_list' %}">All Vehicles</a>
